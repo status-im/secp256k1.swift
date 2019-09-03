@@ -40,23 +40,22 @@ let package = Package(
                 "secp256k1/src/bench.h",
                 "secp256k1/src/modules/ecdh/tests_impl.h",
                 "secp256k1/src/modules/recovery/tests_impl.h",
-
+                "secp256k1/contrib",
                 "exporter"
             ],
             sources: [
                 ".",
                 "secp256k1/src",
                 "secp256k1/include",
-                "secp256k1/contrib",
                 "secp256k1/modules/ecdh",
                 "secp256k1/modules/recovery"
             ],
             publicHeadersPath: "secp256k1/include",
             cSettings: [
                 .define("HAVE_CONFIG_H"),
-                .headerSearchPath("./secp256k1/Classes/secp256k1"),
-                .headerSearchPath("./secp256k1/Classes/secp256k1/src"),
-                .headerSearchPath("./secp256k1/Classes")
+                .headerSearchPath("secp256k1"),
+                .headerSearchPath("secp256k1/src"),
+                .headerSearchPath(".")
             ]),
         .target(
             name: "secp256k1",
