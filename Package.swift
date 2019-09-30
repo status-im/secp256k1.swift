@@ -1,4 +1,4 @@
-// swift-tools-version:5.0
+// swift-tools-version:5.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
@@ -18,7 +18,7 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
-            name: "libsecp256k1",
+            name: "secp256k1",
             path: "./secp256k1/Classes",
             exclude: [
                 "secp256k1/build-aux",
@@ -40,28 +40,22 @@ let package = Package(
                 "secp256k1/src/bench.h",
                 "secp256k1/src/modules/ecdh/tests_impl.h",
                 "secp256k1/src/modules/recovery/tests_impl.h",
-
+                "secp256k1/contrib",
                 "exporter"
             ],
             sources: [
                 ".",
                 "secp256k1/src",
                 "secp256k1/include",
-                "secp256k1/contrib",
                 "secp256k1/modules/ecdh",
                 "secp256k1/modules/recovery"
             ],
             publicHeadersPath: "secp256k1/include",
             cSettings: [
                 .define("HAVE_CONFIG_H"),
-                .headerSearchPath("./secp256k1/Classes/secp256k1"),
-                .headerSearchPath("./secp256k1/Classes/secp256k1/src"),
-                .headerSearchPath("./secp256k1/Classes")
-            ]),
-        .target(
-            name: "secp256k1",
-            dependencies: ["libsecp256k1"],
-            path: "./secp256k1/Classes/exporter",
-            sources: ["."])
+                .headerSearchPath("secp256k1"),
+                .headerSearchPath("secp256k1/src"),
+                .headerSearchPath(".")
+            ])
     ]
 )
