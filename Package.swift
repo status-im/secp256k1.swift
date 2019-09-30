@@ -56,11 +56,6 @@ let package = Package(
                 .headerSearchPath("secp256k1"),
                 .headerSearchPath("secp256k1/src"),
                 .headerSearchPath(".")
-            ]),
-//        .target(
-//            name: "secp256k1",
-//            dependencies: ["libsecp256k1"],
-//            path: "./secp256k1/Classes/exporter",
-//            sources: ["."])
+            ])
     ]
 )
