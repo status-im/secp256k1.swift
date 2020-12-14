@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'secp256k1'
-  s.version          = '0.1.4'
+  s.version          = '0.1.6'
   s.summary          = 'secp256k1 bindings for swift.'
 
 # This description is used to generate tags and improve search results.
