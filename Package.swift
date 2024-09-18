@@ -47,8 +47,8 @@ let package = Package(
                 ".",
                 "secp256k1/src",
                 "secp256k1/include",
-                "secp256k1/modules/ecdh",
-                "secp256k1/modules/recovery"
+                "secp256k1/src/modules/ecdh",
+                "secp256k1/src/modules/recovery"
             ],
             publicHeadersPath: "secp256k1/include",
             cSettings: [
